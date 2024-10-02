@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- configuracion de los controller -->
+	<!-- una regla importante en spring mvc es que hay que tener 
+	en el contenedor de spring una bean por cada controlador -->
+	<bean id="controladorProductos" class="controladores.ControladorProductos"/>
+	
+	
+	<!-- configuracion de los DAOs -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost/bd_ejemplo_tienda" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+	
+	<!-- DAOs -->
+<!-- 	<bean id="librosDAO" class="daosImpl.LibrosDAOImpl"> -->
+<!-- 		<property name="ds" ref="dataSource" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="usuariosDAO" class="daosImpl.UsuariosDAOImpl"> -->
+<!-- 		<property name="ds" ref="dataSource" /> -->
+<!-- 	</bean> -->
+	
+</beans>
